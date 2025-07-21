@@ -276,11 +276,11 @@ func (ul *userList) Sort(field string, order string) {
 		userTwo := ul.users[b]
 		switch field {
 		case instagram.FieldTimestamp:
-			return userOne.Timestamp.Time.Before(userTwo.Timestamp.Time)
+			return userOne.Timestamp.Before(userTwo.Timestamp.Time)
 		case instagram.FieldUsername:
 			return userOne.Username < userTwo.Username
 		default:
-			return userOne.Timestamp.Time.Before(userTwo.Timestamp.Time)
+			return userOne.Timestamp.Before(userTwo.Timestamp.Time)
 		}
 	})
 	if order == instagram.OrderDesc {
